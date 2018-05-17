@@ -1,0 +1,46 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+.navbar {
+	height: 60px;
+	background-color: silver;
+}
+.navbar a {
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	padding: 20px 10px;
+	float: left;
+}
+.navbar a:hover {
+	background-color: ;
+}
+
+.login-box{
+color: black;
+text-decoration: none;
+text-align: center;
+}
+.login-box a {
+	color: black;
+}
+.login-box p {
+	display: inline;
+	padding: 30px;
+
+}
+form{
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+input, select, textarea {
+    width: 50%;
+    padding: 12px;  
+    border: 1px solid #ccc; 
+    border-radius: 14px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+}
