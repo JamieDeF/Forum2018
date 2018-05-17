@@ -1,6 +1,6 @@
 <?php
 $output = "
-<form method='post' id ='mijn' name='mijn'>
+	<form method='post' id ='mijn' name='mijn'>
 	<br> Voornaam <input type='text' name='voornaam'>
 	<br> Achternaam <input type='text' name='achternaam'>
 	<br> Postcode <input type ='text' name= 'postcode'>
