@@ -43,6 +43,9 @@
 		case 'passwordchange':
 			include ('onderdelen/pag_passwordchange.php');
 			break;
+		case 'passwordchange_succes':
+			include ('onderdelen/pag_passwordchange_succes.php');
+			break;	
 		case 'passwordchange_new':
 			include ('onderdelen/pag_passwordchange_new.php');
 			break;	

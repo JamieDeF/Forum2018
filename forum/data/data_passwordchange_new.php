@@ -7,5 +7,5 @@ if ($pwd1 === $pwd2) {
     
     $query = "UPDATE users SET user_pwd = '". $pwdhash ."' WHERE reset_key = '". $wwkey ."'";
     mysqli_query($db_link, $query);
-    header('location: ?pag=home&succes');
+    header('location: ?pag=passwordchange_succes');
 }
