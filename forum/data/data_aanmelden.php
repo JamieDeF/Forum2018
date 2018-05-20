@@ -20,14 +20,14 @@
                 mysqli_query($db_link, $insert);
             } else {
                 $error_pwd = "Je wachtwoorden zijn niet hetzelfde!";
-                //header('location: ?pag=register');
+                //header('location: ?pag=register');   todo - pop up error
             }
         } else {
             $error_username = "gebruikersnaam is al in gebruik";
-            //header('location: ?pag=register');
+            //header('location: ?pag=register'); todo- pop up error
         }
     }else {
         $error_email = "dit email adres is al in gebruik!";
-        //header('location: ?pag=register');
+        //header('location: ?pag=register'); todo-  pop up error
     }
     //error displayen ? pwd/username/email TODO. 

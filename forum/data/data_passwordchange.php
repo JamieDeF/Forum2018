@@ -6,5 +6,10 @@ $sql = "SELECT user_email FROM users WHERE user_email = '$email'";
 $result = mysqli_query($db_link, $sql);
 
 if (mysqli_num_rows($result) == 1) {
-     header('location: ?pag=passwordchange_new&email='.$email);
- } 
+	$wacht_key = uniqid();
+	$sql_ww = "UPDATE `users` SET `reset_key`= '". $wacht_key ."' WHERE user_email = '". $email ."'";
+	mysqli_query($db_link, $sql_ww);
+    header('location: ?pag=passwordchange_new&wwkey='.$wacht_key);
+ } else {
+ 	header('location: ?pag=passwordchange&error=email');
+ }

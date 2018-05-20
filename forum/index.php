@@ -19,6 +19,9 @@
 		case 'data_passwordchange':
 			include 'data/data_passwordchange.php';
 			break;
+		case 'data_passwordchange_new':
+			include 'data/data_passwordchange_new.php';
+			break;	
 	}
 	switch ($pag_gekozen){
 		case 'aanmelden':
