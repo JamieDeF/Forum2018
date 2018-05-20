@@ -111,19 +111,21 @@ function submit_pwd_form() {
     // ajax request aan maken.
     ajaxreq = new XMLHttpRequest();
     // vervolg funtie na ajax request.
-    ajaxreq.onload = ajaxsucces;
+    ajaxreq.onreadystatechange = function() {
+        console.log("test")
+        if (this.readyState==4 && this.status == 200){
+            console.log(this.responseText);
+        }
+    }
     // url waar het heen moet.
-    ajaxreq.open("post", "data/data_passwordchange.php", true);
+    ajaxreq.open("post", "data/data_passwordchange.php", false);
     // maak formulier data aan.
     var paramaters = new FormData;
     // voegt inhoud email toe aan formdata.
+    ajaxreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     paramaters.append('email', emailvalue);
     paramaters.append('post', 'data_passwordchange');
     // verzenden.
-    ajaxreq.send(paramaters);
-}
-
-function ajaxsucces() {
-    console.log("succes");
+    ajaxreq.send("email="+emailvalue+"post=data_passwordchange");
 }
 
