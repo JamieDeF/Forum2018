@@ -8,11 +8,9 @@ if ($error == !"") {
 } 
 
 $output .= "
-<form method='POST' action='index.php'>
-        <p>Wat is je email?<br><input type='email' name='email' size='40' maxlength='200'><br></p>
-        <input type='hidden' name='post' value='data_passwordchange'>
-        <p><input type='submit' name='submit' value='Verander!''></p>
+<form>
+    <p>Wat is je email?<br><input type='email' id='email' name='email' size='40' maxlength='200'><br></p>
+    <input type='hidden' name='post' value='data_passwordchange'>
+    <p><span onclick='submit_pwd_form()' class='btn' >Verander</span> </p>
 </form>
 ";
-
-

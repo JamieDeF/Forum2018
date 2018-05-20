@@ -104,3 +104,26 @@ function userregisterChecker() {
 
 }
 
+// versturen van wachtwoord formulier.
+function submit_pwd_form() {
+    // haalt inhoud van html element email op.
+    var emailvalue = document.getElementById('email').value;
+    // ajax request aan maken.
+    ajaxreq = new XMLHttpRequest();
+    // vervolg funtie na ajax request.
+    ajaxreq.onload = ajaxsucces;
+    // url waar het heen moet.
+    ajaxreq.open("post", "data/data_passwordchange.php", true);
+    // maak formulier data aan.
+    var paramaters = new FormData;
+    // voegt inhoud email toe aan formdata.
+    paramaters.append('email', emailvalue);
+    paramaters.append('post', 'data_passwordchange');
+    // verzenden.
+    ajaxreq.send(paramaters);
+}
+
+function ajaxsucces() {
+    console.log("succes");
+}
+
