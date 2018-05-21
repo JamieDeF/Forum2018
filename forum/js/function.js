@@ -112,20 +112,16 @@ function submit_pwd_form() {
     ajaxreq = new XMLHttpRequest();
     // vervolg funtie na ajax request.
     ajaxreq.onreadystatechange = function() {
-        console.log("test")
+        // controleren of request succesvol is.
         if (this.readyState==4 && this.status == 200){
-            console.log(this.responseText);
+            var json = JSON.parse(this.responseText);
+            window.location.href = "?pag=passwordchange_new&wwkey="+json['wacht_key'];
         }
     }
-    // url waar het heen moet.
-    ajaxreq.open("post", "data/data_passwordchange.php", false);
+    // url waar het heen moet. true = asynchroon.
+    ajaxreq.open("post", "index.php", true);
     // maak formulier data aan.
-    var paramaters = new FormData;
-    // voegt inhoud email toe aan formdata.
     ajaxreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    paramaters.append('email', emailvalue);
-    paramaters.append('post', 'data_passwordchange');
-    // verzenden.
-    ajaxreq.send("email="+emailvalue+"post=data_passwordchange");
+    // verzenden met data.
+    ajaxreq.send("email="+emailvalue+"&post=data_passwordchange");
 }
-

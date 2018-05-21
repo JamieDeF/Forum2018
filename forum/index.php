@@ -17,7 +17,10 @@
 			include 'data/data_aanmelden.php';
 		break;
 		case 'data_passwordchange':
+			// laat php json echo
 			include 'data/data_passwordchange.php';
+			// stop de rest van de code.
+			die();
 			break;
 		case 'data_passwordchange_new':
 			include 'data/data_passwordchange_new.php';
