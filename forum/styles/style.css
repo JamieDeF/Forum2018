@@ -16,6 +16,14 @@ html, body {
 .navbar a:hover {
 	background-color: ;
 }
+a.navbar-right, .navbar-right {
+	float: right;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.nav-margin {
+	margin-top: 21px;
+}
 
 .login-box{
 color: black;

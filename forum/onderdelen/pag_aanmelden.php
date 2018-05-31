@@ -1,6 +1,5 @@
 <?php
 
-
  $output = "
 <div class='login-register-wrapper'>
     <div class='login-box'>
@@ -21,4 +20,3 @@
 enter_register();
 </script>
  ";
-

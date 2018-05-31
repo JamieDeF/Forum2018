@@ -11,7 +11,7 @@ function userloginChecker() {
         warning = 'Je moet een wachtwoord invullen!';
     }
     if (allowed_to_sent === 'ja') {
-        document.login.submit();
+        ajax_submit('login')
     }else{
         alert(warning)
     }
@@ -97,31 +97,73 @@ function userregisterChecker() {
         warning = 'Je wachtwoorden zijn niet gelijk!'
     }
     if (allowed_to_sent === 'ja'){
-        document.register.submit();
+        ajax_submit('register');
     } else {
         alert(warning)
     }
 
 }
 
-// versturen van wachtwoord formulier.
-function submit_pwd_form() {
-    // haalt inhoud van html element email op.
-    var emailvalue = document.getElementById('email').value;
-    // ajax request aan maken.
-    ajaxreq = new XMLHttpRequest();
-    // vervolg funtie na ajax request.
-    ajaxreq.onreadystatechange = function() {
-        // controleren of request succesvol is.
-        if (this.readyState==4 && this.status == 200){
-            var json = JSON.parse(this.responseText);
-            window.location.href = "?pag=passwordchange_new&wwkey="+json['wacht_key'];
-        }
+function ajax_menu(pag) {
+    var Npag = new XMLHttpRequest();
+    Npag.onload = ajaxSuccess;
+    Npag.open("get", "?pag=" + pag);
+    Npag.send();
+}
+function ajax_submit(post) {
+    oFormElement = document.getElementById(post);
+    // versturen formulier via json
+    //   zie ook https://www.w3schools.com/js/js_ajax_http_send.asp
+    var oReq = new XMLHttpRequest();
+    // onload ipv onreadystatechange
+    //   zie ook https://zqzhang.github.io/blog/2016/04/18/why-use-onload-in-cross-domain-ajax.html
+    // hiermee wordt bepaald dat als er een bericht van de server terug komt
+    //   de functie ajaxSuccess moet worden aangeroepen
+    oReq.onload = ajaxSuccess;
+    // verzending voorbereiden, 3 vars nodig:
+    //   1) type: post (kan ook get zijn)
+    //   2) het php bestand die moet worden aangeroepen,
+    //      in dit geval demo_json_form.php, vastgelegd in action van het formulier
+    //   3) asynchronously, true of false (false is not recommended, default = true)
+    oReq.open("post", oFormElement.action);
+    // het echt verzenden van het bericht, waarbij het formulier via FormData wordt omgezet naar
+    oReq.send(new FormData(oFormElement));
+}
+
+function ajaxSuccess() {
+    var response_text;
+
+    // retourbericht van de server opvangen, via try catch
+    try {
+        response_text = JSON.parse(this.responseText);
+    } catch (e) {
+        // e bevat de javascript tekst van het foutbericht
+        // vaak geeft this.responseText meer info: dit is het gehele bericht van de server
+        alert('fout in json retourbericht, melding:\n' + e + '\ntekst:\n' + this.responseText);
+        return;
     }
-    // url waar het heen moet. true = asynchroon.
-    ajaxreq.open("post", "index.php", true);
-    // maak formulier data aan.
-    ajaxreq.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    // verzenden met data.
-    ajaxreq.send("email="+emailvalue+"&post=data_passwordchange");
+    // check er er een gevulde melding in zit
+    if (response_text.error != '') {
+        // ja, via alert tonen
+        alert(response_text.error);
+    }
+    // check of er een gevulde output is
+    if (response_text.output != '') {
+        // ja, de div vullen
+        document.getElementById('output').innerHTML = response_text.output;
+    }
+    if (response_text.navbar != '') {
+        document.getElementById('navbar').innerHTML = response_text.navbar;
+        alert(response_text.navbar.length());
+    }
+    if (response_text.sidebar != '') {
+        document.getElementById('sidebar').innerHTML = response_text.sidebar;
+    }
+    if (response_text.javascript !== '') {
+        var nw_el = document.getElementById('output');
+        var scriptNode = document.createElement('script');
+        scriptNode.innerHTML = response_text.javascript;
+        nw_el.appendChild(scriptNode);
+    }
+
 }

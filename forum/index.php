@@ -2,10 +2,16 @@
 	session_start();
 	include 'includes/dbh.inc.php';
 	include 'includes/function.php';
+
 	$output = "";
+	$navbar = "";
+	$js = "";
+	$errormessage = "";
 	$user_login = "false";
 	$pag_gekozen=f_pag_gekozen();
 	$pag_gepost=f_pag_gepost();
+	
+
 	switch ($pag_gepost){
 		case 'data_mijn':
 			include ("data/data_mijn.php");
@@ -28,8 +34,10 @@
 	}
 	switch ($pag_gekozen){
 		case 'aanmelden':
-			# code...
 			include ("onderdelen/pag_aanmelden.php");
+			break;
+		case 'aanmelden_succes':
+			include ('onderdelen/pag_aanmelden_succes.php');
 			break;
 		case 'login':
 			include ("onderdelen/pag_login.php");
@@ -56,10 +64,8 @@
 			include ('onderdelen/opening.php');
 			break;
 	}
-
-	include 'onderdelen/pag_start.php';
-	include 'onderdelen/navbar.php';
-	echo $output;
-	//echo $_SESSION[user];
-	include 'onderdelen/pag_einde.php';
-		?>
+	if ($pag_gekozen == !'' || $pag_gepost == !'') {
+		echo json_encode(array("navbar" => $navbar, "output" => $output, "error" => $errormessage, "javascript" => $js));
+	} else {
+		include 'onderdelen/pag_start.php';
+	}

@@ -31,3 +31,5 @@
         //header('location: ?pag=register'); todo-  pop up error
     }
     //error displayen ? pwd/username/email TODO. 
+    
+header('location: ?pag=aanmelden_succes');

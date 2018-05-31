@@ -9,3 +9,9 @@ echo "
 	</head>
 	<body>
 ";
+
+include 'onderdelen/navbar.php';
+echo "<div id='navbar'>$navbar</div>";
+echo "<div id='output'>$output</div>";
+
+include_once 'onderdelen/pag_einde.php';
