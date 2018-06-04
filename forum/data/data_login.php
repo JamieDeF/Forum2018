@@ -15,10 +15,10 @@
             $_SESSION['user_role'] = $row["user_rol_ID"];
             $_SESSION['user_login'] = "true";
             $user_login = "true";
-            header('Location: ?pag=home');
-            $user_login = loginChecker();
+            include 'onderdelen/navbar.php';
+            $pag_gekozen = 'home';
         }
     } else {
-        header('Location: ?pag=login');
-        echo "your did not fill in the correct username or password";
+        $pag_gekozen = 'login';
+        $errormessage = "your did not fill in the correct username or password";
     }

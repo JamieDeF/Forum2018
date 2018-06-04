@@ -8,8 +8,8 @@
 	$js = "";
 	$errormessage = "";
 	$user_login = "false";
-	$pag_gekozen=f_pag_gekozen();
-	$pag_gepost=f_pag_gepost();
+	$pag_gekozen = f_pag_gekozen();
+	$pag_gepost = f_pag_gepost();
 	
 
 	switch ($pag_gepost){
