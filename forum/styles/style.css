@@ -52,3 +52,17 @@ input, select, textarea, .btn {
     margin-bottom: 16px; 
     resize: vertical 
 }
+
+table{
+    border:1px solid;
+    width: 50%;
+    text-align: center;
+    font-family: "arial", sans-serif;
+}
+td, th {
+    border: 1px solid;
+    padding: 8px;
+}
+tr{
+    background-color: wheat;
+}

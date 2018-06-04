@@ -10,6 +10,7 @@
 	$user_login = "false";
 	$pag_gekozen = f_pag_gekozen();
 	$pag_gepost = f_pag_gepost();
+	$debug = "";
 	
 
 	switch ($pag_gepost){
@@ -31,6 +32,9 @@
 		case 'data_passwordchange_new':
 			include 'data/data_passwordchange_new.php';
 			break;	
+		case 'data_admin_users_delete':
+			include 'data/data_admin_users_delete.php';
+		break;
 	}
 	switch ($pag_gekozen){
 		case 'aanmelden':
@@ -38,6 +42,9 @@
 			break;
 		case 'aanmelden_succes':
 			include ('onderdelen/pag_aanmelden_succes.php');
+			break;
+		case 'admin':
+			include ('onderdelen/pag_admin.php');
 			break;
 		case 'login':
 			include ("onderdelen/pag_login.php");
@@ -64,8 +71,9 @@
 			include ('onderdelen/opening.php');
 			break;
 	}
-	if ($pag_gekozen == !'' || $pag_gepost == !'') {
-		echo json_encode(array("navbar" => $navbar, "output" => $output, "error" => $errormessage, "javascript" => $js));
+
+	if ($pag_gekozen ==! '' || $pag_gepost ==! '') {
+		echo json_encode(array("navbar" => $navbar, "output" => $output, "error" => $errormessage, "javascript" => $js, "debug" => $debug));
 	} else {
 		include 'onderdelen/pag_start.php';
 	}

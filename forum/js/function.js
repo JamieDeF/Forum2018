@@ -16,6 +16,7 @@ function userloginChecker() {
         alert(warning)
     }
 }
+
 function enter_login() {
     /* Enter afhandeling login-screen*/
     if (document.getElementById('username')) {
@@ -37,6 +38,7 @@ function enter_login() {
             });
     }
 }
+
 function enter_register() {
     /* Enter afhandeling Register-screen */
     if (document.getElementById("Uname")) {
@@ -77,8 +79,6 @@ function enter_register() {
     }
 }
 
-
-
 function userregisterChecker() {
     var allowed_to_sent = 'ja';
     var warning = '';
@@ -101,7 +101,6 @@ function userregisterChecker() {
     } else {
         alert(warning)
     }
-
 }
 
 function ajax_menu(pag) {
@@ -110,6 +109,7 @@ function ajax_menu(pag) {
     Npag.open("get", "?pag=" + pag);
     Npag.send();
 }
+
 function ajax_submit(post) {
     oFormElement = document.getElementById(post);
     // versturen formulier via json
@@ -165,5 +165,9 @@ function ajaxSuccess() {
         scriptNode.innerHTML = response_text.javascript;
         nw_el.appendChild(scriptNode);
     }
+}
 
+
+function users_delete() {
+    ajax_submit('data_admin_users_delete');
 }
