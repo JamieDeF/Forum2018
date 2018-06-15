@@ -1,4 +1,7 @@
 <?php 
+if (!defined('GOOD_CALL')) {
+  die();
+}
 $error = "";
 if (isset($_GET["error"])) {
 	$error = "deze email bestaat niet";

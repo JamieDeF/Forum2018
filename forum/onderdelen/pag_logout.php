@@ -1,4 +1,7 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
 $user_login = "false";
 session_destroy();
 

@@ -1,5 +1,7 @@
 <?php
-
+if (!defined('GOOD_CALL')) {
+  die();
+}
     $password1 = sha1($_POST['pwd1']);
     $password2 = sha1($_POST['pwd2']);
     $usernaam_form = $_POST['username'];

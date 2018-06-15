@@ -1,4 +1,8 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
+
 $email = $_POST['email'];
 
 $sql = "SELECT user_email FROM users WHERE user_email = '$email'";

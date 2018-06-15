@@ -1,4 +1,7 @@
 <?php 
+if (!defined('GOOD_CALL')) {
+  die();
+}
     $navbar .= "
     <section class='navbar'>
         <div class='nav-container'>
@@ -19,11 +22,13 @@
         // Check user role for admin page.
         if ($_SESSION['user_role'] == 3) {
             if ($pag_gekozen == 'admin') {
-                $navbar .= "<a class=\"active\" onclick=\"ajax_menu('admin')\"  onmouseover=\"this.style.cursor='pointer'\">Admin</a>";
+                $navbar .= "<a class=\"active\" onclick=\"ajax_menu('admin')\"  onmouseover=\"this.style.cursor='pointer'\">Admin users</a>";
             } else {
-                $navbar .= "<a onclick=\"ajax_menu('admin')\"  onmouseover=\"this.style.cursor='pointer'\">Admin</a>";
+                $navbar .= "<a onclick=\"ajax_menu('admin')\"  onmouseover=\"this.style.cursor='pointer'\">Admin users</a>";
             };
+             $navbar .= "<a onclick=\"ajax_menu('beheer_threads')\"  onmouseover=\"this.style.cursor='pointer'\">Admin threads</a>";
         };
+             $navbar .= "<a onclick=\"ajax_menu('admin_topics')\"  onmouseover=\"this.style.cursor='pointer'\">Admin topics</a>";
      
 
         $navbar .= "<a class='navbar-right logout' onclick=\"ajax_menu('logout')\"  onmouseover=\"this.style.cursor='pointer'\">Logout <i class=\"fas fa-sign-out-alt\"></i></a>";

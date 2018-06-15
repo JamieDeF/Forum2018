@@ -1,4 +1,7 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
 $output = "
 <div class='login-register-wrapper'>
     <div class='login-box'>

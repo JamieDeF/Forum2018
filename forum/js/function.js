@@ -17,6 +17,45 @@ function userloginChecker() {
     }
 }
 
+function users_new() {
+    var allowed_to_sent = true;
+    var warning = '';
+    if (document.getElementById('new_user').value === '') {
+        allowed_to_sent = false;
+        warning = 'Je moet een gebruikersnaam invullen!';
+    }
+    if (document.getElementById('add_U_Email').value === '') {
+        allowed_to_sent = false;
+        warning = 'Je moet een E-mail invullen!';
+    }
+    if (document.getElementById('pw1').value === '') {
+        allowed_to_sent = false;
+        warning = 'je moet een wachtwoord invullen'
+    }
+    if (document.getElementById('pw2').value === '') {
+        allowed_to_sent = false;
+        warning = 'je moet een wachtwoord invullen'
+    }
+    if (allowed_to_sent === true) {
+        ajax_submit('data_newuser');
+    } else {
+        alert(warning);
+    }
+}
+function kutjs() {
+    var allowed_to_sent = true;
+    var warning = '';
+    if (document.getElementById('newthread').value === '') {
+        allowed_to_sent = false;
+        warning = 'Je moet een thread invullen!';
+    }
+    if (allowed_to_sent === true) {
+        ajax_submit('new_thread_form');
+    } else {
+        alert(warning);
+    }
+}
+
 function enter_login() {
     /* Enter afhandeling login-screen*/
     if (document.getElementById('username')) {
@@ -103,6 +142,17 @@ function userregisterChecker() {
     }
 }
 
+function new_thread_delete(){
+    ajax_submit('data_admin_threads');
+}
+
+function users_delete() {
+    ajax_submit('data_admin_users_delete');
+}
+function new_topic_delete() {
+    ajax_submit('data_admin_topics');
+}
+
 function ajax_menu(pag) {
     var Npag = new XMLHttpRequest();
     Npag.onload = ajaxSuccess;
@@ -165,9 +215,4 @@ function ajaxSuccess() {
         scriptNode.innerHTML = response_text.javascript;
         nw_el.appendChild(scriptNode);
     }
-}
-
-
-function users_delete() {
-    ajax_submit('data_admin_users_delete');
 }

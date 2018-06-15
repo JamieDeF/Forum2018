@@ -1,4 +1,7 @@
-<?php 
+<?php
+if (!defined('GOOD_CALL')) {
+  die();
+} 
 $wwkey = $_GET['wwkey'];
 
 $output = "

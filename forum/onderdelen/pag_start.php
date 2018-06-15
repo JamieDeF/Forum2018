@@ -1,4 +1,7 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
 echo "
 <!DOCTYPE html>
 <html>

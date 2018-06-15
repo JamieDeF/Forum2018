@@ -1,4 +1,7 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
 
 $voornaam = $_POST["voornaam"];
 $achternaam = $_POST["achternaam"];

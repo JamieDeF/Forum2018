@@ -1,4 +1,7 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
     $usernaam = $_POST['username'];
     $pwd = $_POST['pwd'];
     $pwd = sha1($pwd);

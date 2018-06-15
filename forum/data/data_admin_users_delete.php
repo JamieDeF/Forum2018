@@ -1,10 +1,13 @@
-<?php
+ <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
     $post_data = $_POST;
     // Remove 'post' from users.
     $post_action = array_pop($post_data);
 
     if ($post_action == 'data_admin_users_delete'){
-        $users = $post_data
+        $users = $post_data;
         // Parse user ids.
         $user_ids = [];
         foreach ($users as $key=>$value) {

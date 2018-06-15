@@ -1,4 +1,8 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
+
 function f_pag_gekozen(){
 	$pag = "";
         if (isset($_GET['pag']))
@@ -14,7 +18,13 @@ function f_pag_gepost(){
 		$pag_post = $_POST['post'];
 	}
 	return $pag_post;
+if ($pag_gepost != ""){
+	if(!f_check_token()){
+		echo "illegale posting";
+		die();	}
 }
+}
+
 function get_users(){
 
 /*Chats*/

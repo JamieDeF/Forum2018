@@ -1,4 +1,8 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
+
 $pwd1 = $_POST['password2'];
 $pwd2 = $_POST['password'];
 $wwkey = $_POST['wwkey'];

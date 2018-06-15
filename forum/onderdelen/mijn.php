@@ -1,4 +1,7 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
 $output = "
 	<form method='post' id ='mijn' name='mijn'>
 	<br> Voornaam <input type='text' name='voornaam'>

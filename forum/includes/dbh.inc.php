@@ -1,4 +1,8 @@
 <?php
+if (!defined('GOOD_CALL')) {
+  die();
+}
+
 $servernaam = "localhost";
 $usernaam = "school_forum";
 $password = 'test';

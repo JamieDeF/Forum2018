@@ -1,7 +1,10 @@
 <?php
+	define ("GOOD_CALL", "yes");
+
 	session_start();
 	include 'includes/dbh.inc.php';
 	include 'includes/function.php';
+	include 'onderdelen/functions_safe.php';
 
 	$output = "";
 	$navbar = "";
@@ -11,8 +14,6 @@
 	$pag_gekozen = f_pag_gekozen();
 	$pag_gepost = f_pag_gepost();
 	$debug = "";
-	
-
 	switch ($pag_gepost){
 		case 'data_mijn':
 			include ("data/data_mijn.php");
@@ -24,16 +25,25 @@
 			include 'data/data_aanmelden.php';
 		break;
 		case 'data_passwordchange':
-			// laat php json echo
 			include 'data/data_passwordchange.php';
-			// stop de rest van de code.
-			die();
 			break;
 		case 'data_passwordchange_new':
 			include 'data/data_passwordchange_new.php';
 			break;	
 		case 'data_admin_users_delete':
 			include 'data/data_admin_users_delete.php';
+		break;
+		case 'data_newuser':
+			include 'data/data_newuser.php';
+		break;
+		case 'data_admin_threads':
+			include 'data/data_admin_threads.php';
+		break;
+		case 'data_newthread':
+			include 'data/data_newthread.php';
+		break;
+		case 'data_admin_topics':
+			include 'data/data_admin_topics.php';
 		break;
 	}
 	switch ($pag_gekozen){
@@ -63,7 +73,13 @@
 			break;
 		case 'passwordchange_succes':
 			include ('onderdelen/pag_passwordchange_succes.php');
+			break;
+		case 'beheer_threads':
+			include ('onderdelen/pag_beheer_threads.php');
 			break;	
+		case 'admin_topics':
+			include ('onderdelen/pag_admin_topics.php');
+			break;
 		case 'passwordchange_new':
 			include ('onderdelen/pag_passwordchange_new.php');
 			break;	
