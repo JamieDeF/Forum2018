@@ -2,6 +2,7 @@
 if (!defined('GOOD_CALL')) {
   die();
 }
+$aantal_gewijzigd = 0;
 $n = 0;
 $naam = "thread_id_$n";
     $post_data = $_POST;
