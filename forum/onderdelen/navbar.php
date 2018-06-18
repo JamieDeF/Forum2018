@@ -27,9 +27,9 @@ if (!defined('GOOD_CALL')) {
                 $navbar .= "<a onclick=\"ajax_menu('admin')\"  onmouseover=\"this.style.cursor='pointer'\">Admin users</a>";
             };
              $navbar .= "<a onclick=\"ajax_menu('beheer_threads')\"  onmouseover=\"this.style.cursor='pointer'\">Admin threads</a>";
-        };
+    
              $navbar .= "<a onclick=\"ajax_menu('admin_topics')\"  onmouseover=\"this.style.cursor='pointer'\">Admin topics</a>";
-     
+        };
 
         $navbar .= "<a class='navbar-right logout' onclick=\"ajax_menu('logout')\"  onmouseover=\"this.style.cursor='pointer'\">Logout <i class=\"fas fa-sign-out-alt\"></i></a>";
 
