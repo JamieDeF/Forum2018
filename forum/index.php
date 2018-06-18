@@ -80,6 +80,9 @@
 		case 'admin_topics':
 			include ('onderdelen/pag_admin_topics.php');
 			break;
+		case 'pag_topics':
+			include ('onderdelen/pag_topics.php');
+			break;
 		case 'passwordchange_new':
 			include ('onderdelen/pag_passwordchange_new.php');
 			break;	

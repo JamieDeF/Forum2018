@@ -10,7 +10,7 @@ if (!defined('GOOD_CALL')) {
         if ($pag_gekozen == 'home' || '') {
             $navbar .= "<a class=\"active\" onclick=\"ajax_menu('home')onmouseover=\"this.style.cursor='pointer'\">Home</a>";
         } else {
-            $navbar .= "<a onclick=\"ajax_menu('home')\"  onmouseover=\"this.style.cursor='pointer'\">Home</a>";
+            $navbar .= "<a onclick=\"ajax_menu('home')\"  onmouseover=\"this.style.cursor='pointer'\">Home</a>";              
         };
 
         if ($pag_gekozen == 'threads') {
