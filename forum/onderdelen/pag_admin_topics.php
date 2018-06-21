@@ -47,6 +47,7 @@ $output = "
             
         $output .=" </tbody>
     </table>
+    <input type='hidden' name='_token' value='$token'>
     <input type='hidden' name='post' value='data_admin_topics'>
     <input type='button' name='btnsubmit' id='sbtn' onclick='new_topic_delete()' value='Delete topic'>
 </form>

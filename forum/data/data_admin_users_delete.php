@@ -21,9 +21,6 @@ if (!defined('GOOD_CALL')) {
         mysqli_query($db_link, $sql_query);
 
         $pag_gekozen = 'admin';
-    } elseif ($post_action == 'data_admin_user_update'){
-
-    } elseif ($post_action == 'data_admin_user_create'){
-        
-    }
+    }    
+    
 ?>
