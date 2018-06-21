@@ -16,8 +16,7 @@ function f_csrf_token(){
 
 function f_check_token(){
   if(hash_equals($_SESSION['_token'], $_POST['_token'])){
-    // Niet hier gebruiken vanwege ajax, enkel token leeghalen bij het uitloggen.
-    // unset($_SESSION['_token']);
+    unset($_SESSION['_token']);
     return true;
   }
   return false;

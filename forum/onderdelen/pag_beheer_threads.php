@@ -27,17 +27,16 @@ $output = "
             </tr>
         </thead>
         <tbody>";
-            $n=0;
             while($row = mysqli_fetch_assoc($result)){
                     $output .= '<tr>';
-                    $output .= '<td> <input type="checkbox" name="user_' . $row['ID'] . '"><input type="hidden" name="thread_id_"'. $n .'  value="' . $row["ID"] . '"></td>';
-                    $output .= "<td> <input type=\"text\" value='$row[naam]'></td>";
+                    $output .= '<td> <input type="checkbox" name="delete_thread_id_' . $row['ID'] . '">';
+                    $output .= '<td> <input type="text" name="name_thread_id_' . $row['ID'] . '" value="'.$row['naam'].'"></td>';
                 $output .= '</tr>';
-            $n++;
             }
             
         $output .=" </tbody>
     </table>
+    <input type='hidden' name='_token' value='$token'>
     <input type='hidden' name='post' value='data_admin_threads'>
     <input type='button' name='btnsubmit' id='sbtn' onclick='new_thread_delete();' value='Save'>
 </form>

@@ -35,7 +35,7 @@ $output = "
         <tbody>";
             while($row = mysqli_fetch_assoc($result)){
                 $output .= '<tr>';
-                $output .= '<td> <input type="checkbox" name="user_' . $row['ID'] . '"></td>';
+                $output .= '<td> <input type="checkbox" name="topic_' . $row['ID'] . '"></td>';
                 $output .= '<td>'.$row['titel'].'</td>';
                 $output .= '<td>'.$row['datum'].'</td>';
                 $output .= '<td>'.$row['tijd'].'</td>';

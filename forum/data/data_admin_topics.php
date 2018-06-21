@@ -4,17 +4,19 @@ if (!defined('GOOD_CALL')) {
 }
     $post_data = $_POST;
     // Remove 'post' from users.
-    $post_action = array_pop($post_data);
+    $post_action = $post_data['post'];
 
     if ($post_action == 'data_admin_topics'){
-        $users = $post_data;
+        $topics = $post_data;
         // Parse user ids.
-        $user_ids = [];
-        foreach ($users as $key=>$value) {
-            array_push($user_ids, str_replace("user_", "", $key));
+        $topic_ids = [];
+        foreach ($topics as $key=>$value) {
+            if ($key !== '_token' && $key !== 'post'){
+                array_push($topic_ids, str_replace("topic_", "", $key));
+            }
         }
         // Build query.0
-        $sql_query = "DELETE FROM topics WHERE ID in (" . implode(", ", $user_ids) . ");";
+        $sql_query = "DELETE FROM topics WHERE ID in (" . implode(", ", $topic_ids) . ");";
         
         // Perform query.
         mysqli_query($db_link, $sql_query);
