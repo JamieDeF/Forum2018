@@ -14,6 +14,7 @@
 	$pag_gekozen = f_pag_gekozen();
 	$pag_gepost = f_pag_gepost();
 	$debug = "";
+	
 	switch ($pag_gepost){
 		case 'data_mijn':
 			include ("data/data_mijn.php");
@@ -39,6 +40,9 @@
 		case 'data_admin_threads':
 			include 'data/data_admin_threads.php';
 		break;
+		case 'new_topic':
+			include 'data/data_new_topic.php';
+			break;
 		case 'data_newthread':
 			include 'data/data_newthread.php';
 		break;
@@ -82,6 +86,9 @@
 			break;
 		case 'pag_topics':
 			include ('onderdelen/pag_topics.php');
+			break;
+		case 'new_topic':
+			include ('onderdelen/pag_new_topic.php');
 			break;
 		case 'passwordchange_new':
 			include ('onderdelen/pag_passwordchange_new.php');

@@ -2,6 +2,7 @@
 if (!defined('GOOD_CALL')) {
   die();
 }
+$token = f_csrf_token();
 
  $output = "
 <div class='login-register-wrapper'>
@@ -10,6 +11,7 @@ if (!defined('GOOD_CALL')) {
         <form action='index.php' method='POST' id='register' name='register'> 
             <input type='text' name='username' id='uName' placeholder='Username'><br>
             <input type='email' name='email' id='Email' placeholder='E-mail'>
+           <input type=\"hidden\" name=\"_token\" id=\"_token\" value=\"$token\">
             <input type='password' name='pwd1' id='pwd1' placeholder='Password'>
             <input type='password' name='pwd2' id='pwd2' placeholder='Confirm password'>
             <input type='hidden' name='post' value='data_aanmelden'>

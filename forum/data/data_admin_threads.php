@@ -3,6 +3,8 @@ if (!defined('GOOD_CALL')) {
   die();
 }
 $aantal_gewijzigd = 0;
+$posting_gedaan = "ja";
+$aantal_toegevoegd = 0;
 $n = 0;
 $naam = "thread_id_$n";
     $post_data = $_POST;
@@ -17,8 +19,7 @@ $naam = "thread_id_$n";
             array_push($user_ids, str_replace("user_", "", $key));
         }
         // Build query.
-        $sql_query = "DELETE FROM thread WHERE ID in (" . implode(", ", $user_ids) . ");";
-        
+        $sql_query = "DELETE FROM thread WHERE ID IN (" . implode(", ", $user_ids) . ");";
         // Perform query.
         mysqli_query($db_link, $sql_query);
 
@@ -40,7 +41,7 @@ while (isset($_POST[$naam])) {
                 if ($naam_thread != $row["naam"]) {
                     // ja, moet overschreven
                     // (normaal query op de database, nu voor demo bewerking van de array)
-                    $query = "UPDATE thread SET naam='$naam_thread' WHERE ID=$thread_id";
+                    $query = "UPDATE thread SET naam='$naam_thread' WHERE ID in (" . implode(",", $naam_thread) . ");";
                     $result1 = mysqli_query($server_driver, $query);
                     $aantal_gewijzigd++;
 

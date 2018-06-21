@@ -18,7 +18,7 @@ $result = mysqli_query($server_driver, $query);
 $output = "
 <table>
 	<thead>
-		<tr><th>Naam</th>
+		<tr><th>Topics</th>
 	</thead>
 	<tbody>";
 		while($row = mysqli_fetch_assoc($result)){
@@ -30,6 +30,7 @@ $output = "
 	$output .=" </tbody>
 </table>
 ";
+include ("pag_new_topic.php");
 
 }else{
 //laden van threads
@@ -40,7 +41,7 @@ $result = mysqli_query($server_driver, $query);
 $output = "
 <table>
 	<thead>
-		<tr><th>Naam</th></tr>
+		<tr><th>Threads</th></tr>
 	</thead>
 	<tbody>";
     if (mysqli_num_rows($result) > 0) {

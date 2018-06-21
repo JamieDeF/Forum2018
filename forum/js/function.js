@@ -206,9 +206,7 @@ function ajaxSuccess() {
         document.getElementById('navbar').innerHTML = response_text.navbar;
         alert(response_text.navbar.length());
     }
-    if (response_text.sidebar != '') {
-        document.getElementById('sidebar').innerHTML = response_text.sidebar;
-    }
+    
     if (response_text.javascript !== '') {
         var nw_el = document.getElementById('output');
         var scriptNode = document.createElement('script');

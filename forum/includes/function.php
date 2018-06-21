@@ -17,12 +17,12 @@ function f_pag_gepost(){
 	if(isset($_POST['post'])){
 		$pag_post = $_POST['post'];
 	}
-	return $pag_post;
-if ($pag_gepost != ""){
-	if(!f_check_token()){
-		echo "illegale posting";
+	if ($pag_post != ""){
+		if(!f_check_token()){
+			echo "illegale posting";
 		die();	}
-}
+	}
+	return $pag_post;
 }
 
 function get_users(){

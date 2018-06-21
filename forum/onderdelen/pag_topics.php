@@ -15,6 +15,10 @@ $result = mysqli_query($server_driver, $query);
 // resultaat tonen van een SELECT:
 		while($row = mysqli_fetch_assoc($result)){
 		$output .= "<h1>" . $row['titel'] . "</h1>";
+		$output .= "<p>" . $row['datum'] . "</p>"; 
+		$output .= "<p>" . $row['tijd'] . "</p>"; 
 		$output .= "<p>" . $row['text'] . "</p>"; 
+	
+
 		}
 ?>
