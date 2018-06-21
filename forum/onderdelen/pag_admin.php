@@ -47,12 +47,13 @@ $output = "
     <input type='button' name='btnsubmit' id='sbtn' onclick='users_delete()' value='Delete user'>
 </form>
 </div>
+
 <div class='newuserform'>
 <form action='index.php' method='post' name='data_newuser' id='data_newuser'>
     <tbody>
         <tr>
             <td><input type='text' name='new_user' id='new_user' placeholder ='New user'></td>
-            <td><input type='Email' name='add_U_Email' id='add_U_Email' placeholder ='E-mail'></td>
+            <td><input type='email' name='add_U_Email' id='add_U_Email' placeholder ='E-mail'></td>
             <td>
                 <select name='User_role' id='User_role'>
                     <option value='2'>User</option>

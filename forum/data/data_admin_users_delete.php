@@ -11,9 +11,12 @@ if (!defined('GOOD_CALL')) {
         // Parse user ids.
         $user_ids = [];
         foreach ($users as $key=>$value) {
-            array_push($user_ids, str_replace("user_", "", $key));
+            if (strpos($key, 'user') !== false){
+                array_push($user_ids, str_replace("user_", "", $key));
+            } 
         }
 
+        $debug = $user_ids;
         // Build query.
         $sql_query = "DELETE FROM users WHERE ID in (" . implode(", ", $user_ids) . ");";
         
@@ -21,6 +24,5 @@ if (!defined('GOOD_CALL')) {
         mysqli_query($db_link, $sql_query);
 
         $pag_gekozen = 'admin';
-    }    
-    
+    }
 ?>
