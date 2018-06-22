@@ -2,6 +2,8 @@
 if (!defined('GOOD_CALL')) {
   die();
 }
+// hier kun je je wachtwoord veranderen
+
 $error = "";
 if (isset($_GET["error"])) {
 	$error = "deze email bestaat niet";

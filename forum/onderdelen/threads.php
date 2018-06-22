@@ -2,6 +2,8 @@
 if (!defined('GOOD_CALL')) {
   die();
 }
+//hier zijn de threads
+
 // maak connectie met de database via:
 $server_driver = mysqli_connect("localhost", "root", "", "forum");
 // (alleen 'localhost' kun je laten staan, andere variabelen zelf aanpassen)

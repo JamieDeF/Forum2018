@@ -3,7 +3,7 @@ if (!defined('GOOD_CALL')) {
   die();
 }
 $token = f_csrf_token();
-
+//aanmeld formulier
  $output = "
 <div class='login-register-wrapper'>
     <div class='login-box'>
@@ -17,8 +17,8 @@ $token = f_csrf_token();
             <input type='hidden' name='post' value='data_aanmelden'>
             <input type='button' name='btnsubmit' id='sbtn' onclick='userregisterChecker()' value='Register'>
         </form>
-        <p><a href='?pag=passwordchange'><span class='link'>wachtwoord vergeten?</span></a></p>
-        <p><a href='?pag=login'>Al een account: <span class='link'>Login</span></a></p>
+        <p><a onclick=\"ajax_menu('passwordchange')\" onmouseover=\"this.style.cursor='pointer'\"><span class='link left'>Forgot your password?</span></a></p>
+        <p><a onclick=\"ajax_menu('login')\" onmouseover=\"this.style.cursor='pointer'\"><span class='link left'>Already have a account, sign in here</span></a></p>
     </div>
 </div>  
 <script >

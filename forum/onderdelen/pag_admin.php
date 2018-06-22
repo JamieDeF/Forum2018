@@ -4,6 +4,8 @@ if (!defined('GOOD_CALL')) {
 }
 
 $token = f_csrf_token();
+//Admin pagina om users te verwijderen en niewe in te voegen.
+
 
 // maak connectie met de database via:
 $server_driver = mysqli_connect("localhost", "root", "", "forum");

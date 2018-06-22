@@ -4,6 +4,7 @@ if (!defined('GOOD_CALL')) {
 }
 
 $token = f_csrf_token();
+//Threads wijzigen,wissen en nieuwe toevoegen voor admin
 
 // maak connectie met de database via:
 $server_driver = mysqli_connect("localhost", "root", "", "forum");

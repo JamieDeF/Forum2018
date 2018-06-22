@@ -2,4 +2,5 @@
 if (!defined('GOOD_CALL')) {
   die();
 }
-$output= "Het is gelukt! Klik <a href=\"?pag=login\">hier</a> om in te loggen."; 
+// registratie gelukt 
+$output= "Het is gelukt! Klik <a onclick=\"ajax_menu('login')\" onmouseover=\"this.style.cursor='pointer'\">here</a> to sign in."; 

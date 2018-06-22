@@ -2,6 +2,7 @@
 if (!defined('GOOD_CALL')) {
   die();
 }
+//navigatie bar, inclusief admin en login
     $navbar .= "
     <section class='navbar'>
         <div class='nav-container'>
@@ -55,7 +56,7 @@ if (!defined('GOOD_CALL')) {
         if ($pag_gekozen == 'aanmelden') {
             $navbar .= "<a class=\"active\" onclick=\"ajax_menu('aanmelden')\"  onmouseover=\"this.style.cursor='pointer'\">Registreren</a>";
         } else {
-            $navbar .= "<a onclick=\"ajax_menu('aanmelden')\"  onmouseover=\"this.style.cursor='pointer'\">Registreren</a>";
+            $navbar .= "<a onclick=\"ajax_menu('aanmelden')\"  onmouseover=\"this.style.cursor='pointer'\">Register</a>";
         };
         
         if ($pag_gekozen == 'login') {

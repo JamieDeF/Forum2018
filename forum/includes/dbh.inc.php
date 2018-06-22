@@ -4,8 +4,8 @@ if (!defined('GOOD_CALL')) {
 }
 
 $servernaam = "localhost";
-$usernaam = "root";
-$password = '';
+$usernaam = "school_forum";
+$password = 'test';
 $dbname = "forum";
 
 // Create connection

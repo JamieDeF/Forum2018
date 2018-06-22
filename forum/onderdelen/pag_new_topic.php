@@ -4,7 +4,7 @@ $token = f_csrf_token();
 if (isset($_SESSION['user_login'])) {
 
     $thread_id = $_GET['id'];
-
+//nieuwe topic aan maken indien je ingelogd bent
     $output .="
         <form id=\"maketopic\" method=\"POST\" action=\"\">
     	    Titel:<br>
@@ -16,9 +16,15 @@ if (isset($_SESSION['user_login'])) {
             <input type=\"hidden\" name=\"thread_id\" id=\"thread_id\" value=\"$thread_id\">
     	    <button type=\"submit\" value=\"submit\" value=\"new_topic\">Plaats</button>
     	</form>  
-
         ";
+        $output .="<script>
+  		 $(document).ready( function() {
+     	  CKEDITOR.replace('new_topic');
+   });
+</script>";
+
 } else{
+    // niet ingelogd? inloggen om topic aan te maken
     $output .="<h5>log in om een topic aan te maken</h5>";
 }
 ?>

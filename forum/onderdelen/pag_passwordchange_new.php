@@ -3,7 +3,7 @@ if (!defined('GOOD_CALL')) {
   die();
 } 
 $wwkey = $_GET['wwkey'];
-
+//Hier kun je je niuewe wachtwoord invullen
 $output = "
 <form method='POST' action='index.php'>
         <p> je reset key is $wwkey</p><br>

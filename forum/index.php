@@ -46,6 +46,9 @@
 		case 'data_newthread':
 			include 'data/data_newthread.php';
 		break;
+		case 'data_reacties':
+			include 'data/data_reacties.php';
+			break;
 		case 'data_admin_topics':
 			include 'data/data_admin_topics.php';
 		break;
@@ -81,6 +84,9 @@
 		case 'beheer_threads':
 			include ('onderdelen/pag_beheer_threads.php');
 			break;	
+		case 'pag_reacties':
+			include ('onderdelen/pag_reacties.php');
+			break;
 		case 'admin_topics':
 			include ('onderdelen/pag_admin_topics.php');
 			break;

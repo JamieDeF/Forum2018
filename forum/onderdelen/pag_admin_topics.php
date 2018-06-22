@@ -4,6 +4,7 @@ if (!defined('GOOD_CALL')) {
 }
 
 $token = f_csrf_token();
+//deleten van topics voor admin
 
 // maak connectie met de database via:
 $server_driver = mysqli_connect("localhost", "root", "", "forum");
