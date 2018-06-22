@@ -212,7 +212,7 @@ function ajaxSuccess() {
     }
     if (response_text.navbar != '') {
         document.getElementById('navbar').innerHTML = response_text.navbar;
-        alert(response_text.navbar.length());
+        // alert(response_text.navbar.length());
     }
     
     if (response_text.javascript !== '') {
