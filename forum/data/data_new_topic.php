@@ -7,7 +7,7 @@ if (!defined('GOOD_CALL')) {
 include ("includes/dbh.inc.php");
 
 $topictitle = $_POST['title'];
-$topiccontent = $_POST['content'];
+$topiccontent = $_POST['editor'];
 $user = $_SESSION['id'];
 $thread_id = $_POST['thread_id'];
 
@@ -20,5 +20,5 @@ if ($result){
     $output.="Topic aanmaken mislukt";
 }
 
-$pag_gekozen = 'threads';
+$pag_gekozen = 'pag_topic';
 ?>

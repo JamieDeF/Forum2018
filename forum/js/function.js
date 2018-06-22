@@ -17,6 +17,14 @@ function userloginChecker() {
     }
 }
 
+function copy_ckeditor_content(){
+    document.getElementById('topic_content').value = ckeditor.getData();
+}
+
+function post_topic() {
+    ajax_submit('maketopic');
+}
+
 function users_new() {
     var allowed_to_sent = true;
     var warning = '';
@@ -42,7 +50,7 @@ function users_new() {
         alert(warning);
     }
 }
-function kutjs() {
+function beheer_threads() {
     var allowed_to_sent = true;
     var warning = '';
     if (document.getElementById('newthread').value === '') {

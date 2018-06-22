@@ -52,7 +52,7 @@ $output = "
         </tr>
     </tbody>
     <input type='hidden' name='post' id='post' value='data_newthread'>
-    <input type='button' name='btnsubmit' id='sbtn' onclick='kutjs();' value='Add thread'>
+    <input type='button' name='btnsubmit' id='sbtn' onclick='beheer_threads();' value='Add thread'>
 </form>
 </div>
 </div>
